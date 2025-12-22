@@ -54,6 +54,7 @@ export default function CriteriaSection() {
       'nationalities',
       getValues('criteria.sex') === Sex.Any ? null : 'sex',
       getValues('criteria.minAge') || getValues('criteria.maxAge') ? 'age' : undefined,
+      getValues('criteria.documentType') ? 'documentType' : undefined,
     ].filter(Boolean) as CriteriaKey[],
   )
   const sexOptions = useMemo(

@@ -1,7 +1,6 @@
 import { isBoolean } from 'lodash'
 
 import { PollDraftSchema } from '@/db/schemas'
-import { DocumentType } from '@/types'
 
 import { CreatePollSchema } from '../createPollSchema'
 
@@ -55,7 +54,7 @@ export const fromPollDraft = (pollDraft: PollDraftSchema): Partial<CreatePollSch
     minAge,
     maxAge,
     sex,
-    documentType = DocumentType.Passport,
+    documentType,
     questions,
     isRankingBased,
   } = pollDraft

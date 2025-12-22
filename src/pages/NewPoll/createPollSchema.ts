@@ -16,7 +16,6 @@ export const createPollDefaultValues: CreatePollSchema = {
   criteria: {
     nationalities: [ALL_COUNTRIES_NATIONALITY],
     sex: Sex.Any,
-    documentType: DocumentType.Passport,
   },
   isRankingBased: false,
   questions: [
@@ -90,7 +89,7 @@ export const createPollSchema = zod
           codes: zod.array(zod.string().min(1)),
         }),
       ),
-      documentType: zod.nativeEnum(DocumentType),
+      documentType: zod.nativeEnum(DocumentType).optional(),
     }),
     questions: zod
       .array(
